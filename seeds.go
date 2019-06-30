@@ -10,13 +10,13 @@ import (
 const SeedSize = 64
 
 var (
-	internalSource      = rand.NewSource(cryptoSeed())
+	internalSource      = rand.NewSource(CryptoSeed())
 	internalSourceMutex sync.Mutex
 )
 
 func CryptoSeed() uint64 {
 	var seed uint64
-	var buf [seedSize / 8]byte
+	var buf [SeedSize / 8]byte
 	cryptoRand.Read(buf[:])
 	for i := 0; i < len(buf); i++ {
 		seed = (seed << 8) | uint64(buf[i])
