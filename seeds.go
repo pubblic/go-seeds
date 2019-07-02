@@ -1,4 +1,4 @@
-package fraud
+package seeds
 
 import (
 	cryptoRand "crypto/rand"
